@@ -6,6 +6,14 @@ class MyList
   def initialize(*list)
     @list = list
   end
+
+  def each
+    counter = 0
+    while counter < @list.length
+      yield(@list[counter])
+      counter += 1
+    end
+  end
 end
 
 list = MyList.new(1, 2, 3, 4, 5)
